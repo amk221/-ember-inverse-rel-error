@@ -4,5 +4,5 @@ export default class ChildModel extends Model {
   @attr() name;
   @attr() avatarURL;
 
-  @belongsTo('parent', { async: false, inverse: 'child' }) parent;
+  @belongsTo('parent', { async: false }) parent;
 }
