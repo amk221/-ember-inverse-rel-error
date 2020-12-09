@@ -43,6 +43,7 @@ module('Acceptance | application', function(hooks) {
 
     assert.dom('img').hasAttribute('src', 'parent.jpg');
 
+    // Just to ensure nothing is pending
     await settled();
 
     console.log('----- end of test -----');
