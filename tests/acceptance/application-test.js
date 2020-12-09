@@ -33,6 +33,7 @@ module('Acceptance | application', function(hooks) {
   });
 
   hooks.afterEach(function () {
+    console.log('test afterEach');
     this.server.shutdown();
   });
 
