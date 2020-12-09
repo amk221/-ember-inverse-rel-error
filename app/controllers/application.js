@@ -1,6 +1,15 @@
 import Controller from '@ember/controller';
-import { inject } from '@ember/service';
 
 export default class ApplicationController extends Controller {
-  @inject myService;
+  get avatar() {
+    console.log(`avatar getter`);
+    console.log(`child.isDestroying = ${this.model.isDestroying}`);
+    console.log(`child.parent = ${this.model.belongsTo('parent').value()}`);
+
+    return this.model.parent.avatarURL;
+  }
+
+  willDestroy() {
+    console.log('controller willDestroy');
+  }
 }
